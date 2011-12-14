@@ -12,17 +12,17 @@
     <link href="css/style.css" rel="stylesheet">
     <script type="text/javascript">
         cams = {
-            "cam_1": "http://php.localhost/cam/images/bmw.jpg?",
-            "cam_2": "http://php.localhost/cam/images/cart.png",
-            "cam_3": "http://php.localhost/cam/images/monkey.jpg",
-            "cam_4": "http://php.localhost/cam/images/man.jpg",
-            "cam_5": "http://php.localhost/cam/images/woman.jpg",
-            "cam_6": "http://php.localhost/cam/images/printer.png"
+            "cam_1": "images/bmw.jpg",
+            "cam_2": "images/cart.png",
+            "cam_3": "images/monkey.jpg",
+            "cam_4": "images/man.jpg",
+            "cam_5": "images/woman.jpg",
+            "cam_6": "images/printer.png"
         };
 
         function get_cams(container, cams) {
             $.each(cams, function (cam, value) {
-                container.append('<li><a rel="' + cam + '" href="#"><img width="330" height="230" id="'+cam+'" src="' + value + '" class="cam_image"></a></li>');
+                container.append('<li><a href="#"><img width="330" height="230" id="'+cam+'" src="' + value + '" class="cam_image"></a></li>');
             });
         }
 
@@ -33,9 +33,10 @@
         var auto_refresh = setInterval(
                 function() {
                   $.each(cams, function (cam, value) {
-                    $('#'+cam).load(value+'?'+Math.random());
+                    $('#'+cam).attr("src", (value+'?'+Math.random()));
+                    //alert(cam+':'+value+'?'+Math.random());
                   });
-                }, 1000);
+                }, 3000);
 
     </script>
 </head>
