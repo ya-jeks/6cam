@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>6cams</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript">
+        function load_image(path) {
+            var cam_image = $(".cam_image");
+            cam_image.html('');
+            cam_image.load(href, function() { });
+        }
+
+        $(document).ready(function() {
+            cams = {
+              "Кам1": "http://placehold.it/330x230",
+              "Кам2": "ftp://cam_2.jpg",
+              "Кам3": "ftp://cam_3.jpg",
+              "Кам4": "ftp://cam_4.jpg",
+              "Кам5": "ftp://cam_5.jpg",
+              "Кам6": "ftp://cam_6.jpg"
+            };
+            $.each(cams, function (cam, value) {
+				(cam+' '+value);
+            });
+            alert(
+                    $(".media-grid").parent().text()
+            );
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <ul class="media-grid">
+            <li><a rel="cam_1" href="#">1<img id="cam_1" src="http://placehold.it/330x230" class="cam_image"></a></li>
+            <li><a rel="cam_2" href="#">2<img id="cam_2" src="http://placehold.it/330x230" class="cam_image"></a></li>
+            <li><a rel="cam_3" href="#">2<img id="cam_3" src="http://placehold.it/330x230" class="cam_image"></a></li>
+            <li><a rel="cam_4" href="#">4<img id="cam_4" src="http://placehold.it/330x230" class="cam_image"></a></li>
+            <li><a rel="cam_5" href="#">5<img id="cam_5" src="http://placehold.it/330x230" class="cam_image"></a></li>
+            <li><a rel="cam_6" href="#">6<img id="cam_6" src="http://placehold.it/330x230" class="cam_image"></a></li>
+        </ul>
+    </div>
+</div>
+<!-- /container -->
+</body>
+</html>
